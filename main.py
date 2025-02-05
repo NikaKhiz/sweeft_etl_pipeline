@@ -1,3 +1,4 @@
+from database_manager import DatabaseManager
 import requests
 import json
 import os
@@ -15,6 +16,16 @@ def main():
     collections = json.dumps(response.json()['collections'], indent=2)
 
     print(collections)
+
+    database_manager = DatabaseManager.connect(
+        host=os.getenv('DATABASE_HOST'),
+        user=os.getenv('DATABASE_USER'),
+        password=os.getenv('DATABASE_PASSWORD')
+    )
+
+    database_manager.exists_or_create_db(database_name='ethereum')
+    database_manager.use_db(database_name='ethereum')
+    database_manager.exists_or_create_table(table_name='collections')
 
 
 if __name__ == '__main__':
