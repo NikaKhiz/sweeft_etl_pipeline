@@ -1,7 +1,5 @@
 from database_manager import DatabaseManager
-from file_manager import FileManager
-import requests
-import json
+from data_manager import DataManager
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -9,16 +7,22 @@ load_dotenv()
 
 def main():
     api_key = os.getenv('OPENSEA_API_KEY')
+    base_url = 'https://api.opensea.io/api/v2/collections'
+    headers = {'accept': 'application/json', 'X-API-KEY': api_key}
+    limit = 10
+    chain = 'ethereum'
 
-    base_url = "https://api.opensea.io/api/v2/collections?chain=ethereum&limit=3"
-    headers = {"accept": "application/json", 'X-API-KEY': api_key}
-    response = requests.get(base_url, headers=headers)
+    data_manager = DataManager(
+        api_key=api_key, base_url=base_url, headers=headers, limit=limit, chain=chain)
 
-    file_manager = FileManager()
-    file_manager.json_writer(filename='ethereum_json', data=response.json())
-    file_manager.csv_writer(filename='ethereum_csv', data=response.json())
-    print(file_manager.json_reader())
-    print(file_manager.csv_reader())
+    extracted_data = data_manager.extract_data()
+    data_manager.save_raw_data(filename='ethereum', data=extracted_data)
+    loaded_raw_data = data_manager.load_raw_data()
+    print('Json raw data. last version : ', loaded_raw_data['json_raw_data'])
+    print('Csv raw data. last version : ', loaded_raw_data['csv_raw_data'])
+
+    transformed_data = data_manager.transform_data(data=extracted_data)
+    print('Transformed data : ', transformed_data)
 
     database_manager = DatabaseManager.connect(
         host=os.getenv('DATABASE_HOST'),
