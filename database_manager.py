@@ -1,4 +1,5 @@
 import mysql.connector
+import json
 
 
 class DatabaseManager():
@@ -63,3 +64,13 @@ class DatabaseManager():
                                         )
                                     """
                                 )
+
+    # insert data in to the collections table
+    def insert_collections(self, data):
+        sql = """INSERT INTO collections (collection, name, description, image_url, owner, twitter_username, contracts)
+                 VALUES (%s, %s, %s, %s, %s, %s, %s)"""
+        for item in data:
+            values = (item['collection'], item['name'], item['description'], item['image_url'],
+                      item['owner'], item['twitter_username'], json.dumps(item['contracts']))
+            self.cursor.execute(sql, values)
+            self.conn.commit()
