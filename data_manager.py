@@ -4,8 +4,7 @@ from file_manager import FileManager
 
 
 class DataManager():
-    def __init__(self, api_key, base_url, headers, limit, chain):
-        self.api_key = api_key
+    def __init__(self, base_url, headers, limit, chain):
         self.base_url = base_url
         self.headers = headers
         self.limit = limit
@@ -34,7 +33,7 @@ class DataManager():
                 'twitter_username': collection.get('twitter_username'),
                 'contracts': collection.get('contracts'),
             })
-        return json.dumps(transformed_data, indent=4)
+        return transformed_data
 
     # save raw data into csv and json formats
     def save_raw_data(self, data, filename):

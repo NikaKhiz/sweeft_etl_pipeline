@@ -1,6 +1,7 @@
 from database_manager import DatabaseManager
 from data_manager import DataManager
 import os
+import json
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -13,7 +14,7 @@ def main():
     chain = 'ethereum'
 
     data_manager = DataManager(
-        api_key=api_key, base_url=base_url, headers=headers, limit=limit, chain=chain)
+        base_url=base_url, headers=headers, limit=limit, chain=chain)
 
     extracted_data = data_manager.extract_data()
     data_manager.save_raw_data(filename='ethereum', data=extracted_data)
@@ -22,7 +23,7 @@ def main():
     print('Csv raw data. last version : ', loaded_raw_data['csv_raw_data'])
 
     transformed_data = data_manager.transform_data(data=extracted_data)
-    print('Transformed data : ', transformed_data)
+    print('Transformed data : ', json.dumps(transformed_data, indent=2))
 
     database_manager = DatabaseManager.connect(
         host=os.getenv('DATABASE_HOST'),
@@ -33,6 +34,7 @@ def main():
     database_manager.exists_or_create_db(database_name='ethereum')
     database_manager.use_db(database_name='ethereum')
     database_manager.exists_or_create_table(table_name='collections')
+    database_manager.insert_collections(data=transformed_data)
 
 
 if __name__ == '__main__':
