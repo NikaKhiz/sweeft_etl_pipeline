@@ -1,4 +1,5 @@
 from database_manager import DatabaseManager
+from file_manager import FileManager
 import requests
 import json
 import os
@@ -13,9 +14,11 @@ def main():
     headers = {"accept": "application/json", 'X-API-KEY': api_key}
     response = requests.get(base_url, headers=headers)
 
-    collections = json.dumps(response.json()['collections'], indent=2)
-
-    print(collections)
+    file_manager = FileManager()
+    file_manager.json_writer(filename='ethereum_json', data=response.json())
+    file_manager.csv_writer(filename='ethereum_csv', data=response.json())
+    print(file_manager.json_reader())
+    print(file_manager.csv_reader())
 
     database_manager = DatabaseManager.connect(
         host=os.getenv('DATABASE_HOST'),
