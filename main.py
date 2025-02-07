@@ -1,6 +1,6 @@
-from database_manager import DatabaseManager
+from orm.database_manager import DatabaseManager
 from data_manager import DataManager
-from models import Collection
+from orm.models import Collection
 import os
 from dotenv import load_dotenv
 load_dotenv()
