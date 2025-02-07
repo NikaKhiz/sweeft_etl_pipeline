@@ -2,9 +2,14 @@ ETL pipeline with OpenSea API
 
 <p>Application that handles data extraction transformation and load processes.</p>
 <p>Data is extracted from opensea api. the project curretly is focused in ethereum collections.</p>
-<p>App has database manager module (CUSTOM ORM), that handles database creation and connection processes,crud operations on tables, crud operations on models(collections).</p>
+<p>App has database manager module (CUSTOM ORM), that handles database creation and connection processes,crud operations on tables, crud operations on models(collections).data filtering functionality such as selecting rows using operators like like, ilike, in, ordered,limited etc..</p>
 <p>Apps file manager and data manager classes is responsible for data extraction from opensea api, data transformation and load processes</p>
 <p>Currently for data lake i use local machine.Extracted data is saved in json and csv formats and is version controlled using timestamp.</p>
+
+### Future improvements
+
+1. **load data asynchronously in a local data lake.**
+1. **make database io bound tasks asynchronous.**
 
 ### Table of Contents
 
@@ -65,4 +70,4 @@ ETL pipeline with OpenSea API
 python main.py
 ```
 
-### the code above will fetch etherium based collections from opensea api, transform it, save it in to the database and raw format as json and csv file.
+### the code above will fetch etherium based collections from opensea api, transform and save it in to the database and raw data will be saved as json and csv in local data lake.
