@@ -3,6 +3,7 @@ from data_manager import DataManager
 from orm.models import Collection
 import os
 from dotenv import load_dotenv
+os.environ.clear()
 load_dotenv()
 
 
