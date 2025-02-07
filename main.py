@@ -1,5 +1,6 @@
 from database_manager import DatabaseManager
 from data_manager import DataManager
+from models import Collection
 import os
 import json
 from dotenv import load_dotenv
@@ -12,9 +13,11 @@ def main():
     headers = {'accept': 'application/json', 'X-API-KEY': api_key}
     limit = 10
     chain = 'ethereum'
+    next_page = ''
 
+    #  define data manager class that handles etl processes
     data_manager = DataManager(
-        base_url=base_url, headers=headers, limit=limit, chain=chain)
+        base_url=base_url, headers=headers, limit=limit, chain=chain, next_page=next_page)
 
     extracted_data = data_manager.extract_data()
     data_manager.save_raw_data(filename='ethereum', data=extracted_data)
@@ -23,18 +26,26 @@ def main():
     print('Csv raw data. last version : ', loaded_raw_data['csv_raw_data'])
 
     transformed_data = data_manager.transform_data(data=extracted_data)
-    print('Transformed data : ', json.dumps(transformed_data, indent=2))
 
-    database_manager = DatabaseManager.connect(
+    # database connection
+    db_manager = DatabaseManager(
         host=os.getenv('DATABASE_HOST'),
         user=os.getenv('DATABASE_USER'),
         password=os.getenv('DATABASE_PASSWORD')
     )
+    db_manager.connect()
+    db_manager.exists_or_create_db(database_name='ethereum')
+    db_manager.use_db()
 
-    database_manager.exists_or_create_db(database_name='ethereum')
-    database_manager.use_db(database_name='ethereum')
-    database_manager.exists_or_create_table(table_name='collections')
-    database_manager.insert_collections(data=transformed_data)
+    #  create collection model and create corresponding table in the db
+    collection = Collection()
+    db_manager.create_table(collection)
+
+    db_manager.insert_many(table_name='collections',
+                           data_list=transformed_data)
+
+    eth_collections = db_manager.select()
+    print(eth_collections)
 
 
 if __name__ == '__main__':

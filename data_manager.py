@@ -4,17 +4,18 @@ from file_manager import FileManager
 
 
 class DataManager():
-    def __init__(self, base_url, headers, limit, chain):
+    def __init__(self, base_url, headers, limit, chain, next_page):
         self.base_url = base_url
         self.headers = headers
         self.limit = limit
         self.chain = chain
+        self.next_page = next_page
         self.file_manager = FileManager()
 
     # extracts data from opensea api
     def extract_data(self):
         response = requests.get(
-            f'{self.base_url}?chain={self.chain}&limit={self.limit}', headers=self.headers)
+            f'{self.base_url}?chain={self.chain}&limit={self.limit}&next={self.next_page}', headers=self.headers)
         if response.status_code == 200:
             return response.json()
         else:
