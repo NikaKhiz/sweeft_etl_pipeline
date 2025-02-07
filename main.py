@@ -1,8 +1,7 @@
-from database_manager import DatabaseManager
+from orm.database_manager import DatabaseManager
 from data_manager import DataManager
-from models import Collection
+from orm.models import Collection
 import os
-import json
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -21,9 +20,6 @@ def main():
 
     extracted_data = data_manager.extract_data()
     data_manager.save_raw_data(filename='ethereum', data=extracted_data)
-    loaded_raw_data = data_manager.load_raw_data()
-    print('Json raw data. last version : ', loaded_raw_data['json_raw_data'])
-    print('Csv raw data. last version : ', loaded_raw_data['csv_raw_data'])
 
     transformed_data = data_manager.transform_data(data=extracted_data)
 
@@ -44,8 +40,24 @@ def main():
     db_manager.insert_many(table_name='collections',
                            data_list=transformed_data)
 
-    eth_collections = db_manager.select()
-    print(eth_collections)
+    # select statements
+    select_limited = db_manager.select_limited()
+    # print(select_limited)
+    select_ordered_by_desc = db_manager.select_ordered_by_desc(
+        order_by='id', limit=20)
+    # print(select_ordered_by_desc)
+    select_ordered_by_asc = db_manager.select_ordered_by_asc(
+        order_by='id', limit=20)
+    # print(select_ordered_by_asc)
+    select_like = db_manager.select_like(column='name',
+                                         like='IGNATIUS')
+    # print(select_like)
+    select_ilike = db_manager.select_ilike(column='name',
+                                           like='mArIlyn')
+    # print(select_ilike)
+    select_in = db_manager.select_in(column='id',
+                                     col_in='1,13,15')
+    # print(select_in)
 
 
 if __name__ == '__main__':

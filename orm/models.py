@@ -1,4 +1,4 @@
-from orm.base_model import BaseModel
+from .base_model import BaseModel
 
 
 class Collection(BaseModel):

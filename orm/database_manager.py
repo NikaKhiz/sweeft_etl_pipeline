@@ -144,11 +144,15 @@ class DatabaseManager():
         query = f"INSERT INTO {table_name} ({columns}) VALUES ({values_placeholder})"
         self.executemany(query, values_list)
 
-    # select query
-    def select(self, columns='*', where=None, table_name='collections'):
+    # select queries
+    def select(self, columns='*', where=None, limit=None, order_by=None, table_name='collections'):
         query = f"SELECT {columns} FROM {table_name}"
         if where:
             query += f" WHERE {where}"
+        if order_by:
+            query += f" ORDER BY {order_by}"
+        if limit:
+            query += f" LIMIT {limit}"
 
         rows = self.fetch_all(query)
         column_names = [desc[0] for desc in self.cursor.description]
@@ -158,3 +162,29 @@ class DatabaseManager():
             result.append(row_dict)
 
         return json.dumps(result, indent=2)
+
+    def select_limited(self, columns='*', where=None, limit='1', order_by=None):
+        return self.select(columns=columns, where=where, order_by=order_by, limit=limit)
+
+    def select_ordered_by_desc(self, columns='*', where=None, limit=None, order_by=None):
+        order_by = order_by.strip() + ' DESC'
+        return self.select(columns=columns, where=where, order_by=order_by, limit=limit)
+
+    def select_ordered_by_asc(self, columns='*', where=None, limit=None, order_by=None):
+        order_by = order_by.strip() + ' ASC'
+        return self.select(columns=columns, where=where, order_by=order_by, limit=limit)
+
+    def select_like(self, columns='*', column='name', like='something', limit=None, order_by=None):
+        like_query = f'{column} LIKE "%{like}%"'
+        return self.select(columns=columns, where=like_query,
+                           limit=limit, order_by=order_by)
+
+    def select_ilike(self, columns='*', column='name', like='something', limit=None, order_by=None):
+        ilike_query = f'LOWER({column}) LIKE LOWER("%{like}%")'
+        return self.select(columns=columns, where=ilike_query,
+                           limit=limit, order_by=order_by)
+
+    def select_in(self, columns='*', column='id', col_in='1,2,3', limit=None, order_by=None):
+        in_query = f'{column} IN ({col_in})'
+        return self.select(columns=columns, where=in_query,
+                           limit=limit, order_by=order_by)

@@ -1,0 +1,275 @@
+{
+    "collections": [
+        {
+            "collection": "hip-hop-dog-1",
+            "name": "Hip Hop Dog",
+            "description": "",
+            "image_url": "https://i.seadn.io/s/raw/files/5aa68e40e1c1d03578c95b3842a1c116.jpg?w=500&auto=format",
+            "banner_image_url": "",
+            "owner": "0xddfa63d7f0a67c5795fd5bbc62eeaecb8bb63879",
+            "safelist_status": "not_requested",
+            "category": "art",
+            "is_disabled": false,
+            "is_nsfw": false,
+            "trait_offers_enabled": false,
+            "collection_offers_enabled": false,
+            "opensea_url": "https://opensea.io/collection/hip-hop-dog-1",
+            "project_url": "",
+            "wiki_url": "",
+            "discord_url": "",
+            "telegram_url": "",
+            "twitter_username": "",
+            "instagram_username": "",
+            "contracts": [
+                {
+                    "address": "0x8f6fe701544dfca1484bdac80b62125b557ca4be",
+                    "chain": "ethereum"
+                }
+            ]
+        },
+        {
+            "collection": "henry-hilaire-jr",
+            "name": "Henry Hilaire Jr",
+            "description": "",
+            "image_url": "https://i.seadn.io/s/raw/files/58722cf8b0d2b0607b8c0718965bc07c.jpg?w=500&auto=format",
+            "banner_image_url": "",
+            "owner": "0x24c948c6441fcd0c6f9d5d3e47039d3dbc0d2ccc",
+            "safelist_status": "not_requested",
+            "category": "",
+            "is_disabled": false,
+            "is_nsfw": false,
+            "trait_offers_enabled": false,
+            "collection_offers_enabled": true,
+            "opensea_url": "https://opensea.io/collection/henry-hilaire-jr",
+            "project_url": "",
+            "wiki_url": "",
+            "discord_url": "",
+            "telegram_url": "",
+            "twitter_username": "",
+            "instagram_username": "",
+            "contracts": [
+                {
+                    "address": "0x717d354c7f726a971ab447f683e71c3b8c94cd94",
+                    "chain": "ethereum"
+                }
+            ]
+        },
+        {
+            "collection": "liquid-split-0xd983-5",
+            "name": "Liquid Split 0xd983",
+            "description": "",
+            "image_url": "https://raw.seadn.io/files/61d63d1a6fc01c9fd12f90b277962d7e.svg",
+            "banner_image_url": "",
+            "owner": "0xf864cc970432b8aff330e328f125f189e240ad12",
+            "safelist_status": "not_requested",
+            "category": "",
+            "is_disabled": false,
+            "is_nsfw": false,
+            "trait_offers_enabled": false,
+            "collection_offers_enabled": true,
+            "opensea_url": "https://opensea.io/collection/liquid-split-0xd983-5",
+            "project_url": "",
+            "wiki_url": "",
+            "discord_url": "",
+            "telegram_url": "",
+            "twitter_username": "",
+            "instagram_username": "",
+            "contracts": [
+                {
+                    "address": "0xd983f29f6460cc211f85f816528bc28f53e52344",
+                    "chain": "ethereum"
+                }
+            ]
+        },
+        {
+            "collection": "thai-pillow-2",
+            "name": "Thai pillow 0.1",
+            "description": "Thai pillows for sleeping and calming the mind.",
+            "image_url": "https://i.seadn.io/s/raw/files/0469080be9e05956e32ea46ad718c944.jpg?w=500&auto=format",
+            "banner_image_url": "",
+            "owner": "0x9282b9f783c7b3018b07c98221a285edcf7bfd95",
+            "safelist_status": "not_requested",
+            "category": "art",
+            "is_disabled": false,
+            "is_nsfw": false,
+            "trait_offers_enabled": false,
+            "collection_offers_enabled": true,
+            "opensea_url": "https://opensea.io/collection/thai-pillow-2",
+            "project_url": "",
+            "wiki_url": "",
+            "discord_url": "",
+            "telegram_url": "",
+            "twitter_username": "",
+            "instagram_username": "",
+            "contracts": [
+                {
+                    "address": "0xf0f09daa93749951c8f3fa7d16619e61fcbf0104",
+                    "chain": "ethereum"
+                }
+            ]
+        },
+        {
+            "collection": "token-138",
+            "name": "Cultures Tokens",
+            "description": "Celebrating the world\u2019s rich traditions and diverse cultures. Each piece blends tradition with innovation, offering a digital journey through global heritage and vibrant customs.",
+            "image_url": "https://i.seadn.io/s/raw/files/be92798ce5c4ffd6f1d5ae74d2aec2d2.png?w=500&auto=format",
+            "banner_image_url": "",
+            "owner": "0xc0d11308a9f52af72655104b37f884c11afad375",
+            "safelist_status": "not_requested",
+            "category": "art",
+            "is_disabled": false,
+            "is_nsfw": false,
+            "trait_offers_enabled": false,
+            "collection_offers_enabled": true,
+            "opensea_url": "https://opensea.io/collection/token-138",
+            "project_url": "",
+            "wiki_url": "",
+            "discord_url": "",
+            "telegram_url": "",
+            "twitter_username": "",
+            "instagram_username": "",
+            "contracts": [
+                {
+                    "address": "0x3485c416afd0106b55bba9ba4a6feeb88a032bb2",
+                    "chain": "ethereum"
+                }
+            ]
+        },
+        {
+            "collection": "nft-for-creditcard",
+            "name": "NFT for CreditCard",
+            "description": "",
+            "image_url": "https://i.seadn.io/s/raw/files/761e63397f88c8e963c6fa370f418cc5.jpg?w=500&auto=format",
+            "banner_image_url": "",
+            "owner": "0x3993047bbc89920af12ac14dcdc342fa7a6c9429",
+            "safelist_status": "not_requested",
+            "category": "",
+            "is_disabled": false,
+            "is_nsfw": false,
+            "trait_offers_enabled": false,
+            "collection_offers_enabled": true,
+            "opensea_url": "https://opensea.io/collection/nft-for-creditcard",
+            "project_url": "",
+            "wiki_url": "",
+            "discord_url": "",
+            "telegram_url": "",
+            "twitter_username": "",
+            "instagram_username": "",
+            "contracts": [
+                {
+                    "address": "0xe4a96557217e1a1597e3d7c843b0a0f3afd01956",
+                    "chain": "ethereum"
+                }
+            ]
+        },
+        {
+            "collection": "goblin-hood-eth",
+            "name": "Goblin Hood (Eth)",
+            "description": "* This Goblin Hood was designed by another artist with BitSwagger!  There are more to come each with a unique animation to add a little spark to the images!  \n* A blend of fantasy art, digital layering,  & light animations; each goblin in this series will surely shine among your other collections, they are mesmerizing & beautiful images!  Thanks for all the support!\n* Goblin Hood is a concept for a name for part of our merchandising plans; for the BitSwagger digital art studio!  \n* More available at www.bitswagger.org!  These versions on Ethereum will be more rare, get yours while they last! ",
+            "image_url": "https://i.seadn.io/s/raw/files/ad5a04daaa2f956c2e5146451cb09a79.gif?w=500&auto=format",
+            "banner_image_url": "",
+            "owner": "0x122f9b8d96e963aab0d9a109a2c0b4c5f4d05668",
+            "safelist_status": "not_requested",
+            "category": "",
+            "is_disabled": false,
+            "is_nsfw": false,
+            "trait_offers_enabled": false,
+            "collection_offers_enabled": true,
+            "opensea_url": "https://opensea.io/collection/goblin-hood-eth",
+            "project_url": "",
+            "wiki_url": "",
+            "discord_url": "",
+            "telegram_url": "",
+            "twitter_username": "",
+            "instagram_username": "",
+            "contracts": [
+                {
+                    "address": "0x8fb9894b6228b1abcd5b0c6ab51574e93835fb72",
+                    "chain": "ethereum"
+                }
+            ]
+        },
+        {
+            "collection": "pi-collection-2",
+            "name": "Pi-Collection",
+            "description": "",
+            "image_url": "https://i.seadn.io/s/raw/files/0661094a4729daf225502b2856592c4a.jpg?w=500&auto=format",
+            "banner_image_url": "",
+            "owner": "0x98102f0cb51c31e3fc85ad4525c048cccc263501",
+            "safelist_status": "not_requested",
+            "category": "",
+            "is_disabled": false,
+            "is_nsfw": false,
+            "trait_offers_enabled": false,
+            "collection_offers_enabled": true,
+            "opensea_url": "https://opensea.io/collection/pi-collection-2",
+            "project_url": "",
+            "wiki_url": "",
+            "discord_url": "",
+            "telegram_url": "",
+            "twitter_username": "",
+            "instagram_username": "",
+            "contracts": [
+                {
+                    "address": "0x20646bc0f666fd7a7ba2a4dde8e447b0ef78678f",
+                    "chain": "ethereum"
+                }
+            ]
+        },
+        {
+            "collection": "orgin-m",
+            "name": "Orgin m",
+            "description": "",
+            "image_url": "",
+            "banner_image_url": "",
+            "owner": "0xb8a7c703af580c3bcf0baace915e29aac8cc0c89",
+            "safelist_status": "not_requested",
+            "category": "",
+            "is_disabled": false,
+            "is_nsfw": false,
+            "trait_offers_enabled": false,
+            "collection_offers_enabled": true,
+            "opensea_url": "https://opensea.io/collection/orgin-m",
+            "project_url": "",
+            "wiki_url": "",
+            "discord_url": "",
+            "telegram_url": "",
+            "twitter_username": "",
+            "instagram_username": "",
+            "contracts": [
+                {
+                    "address": "0x9659033c09762c5076409cdfd28cd32e42b3baa1",
+                    "chain": "ethereum"
+                }
+            ]
+        },
+        {
+            "collection": "the-swirl-2",
+            "name": "The Swirl",
+            "description": "",
+            "image_url": "https://i.seadn.io/s/raw/files/8f7fecb2b5a406fa0fe4020800d99931.jpg?w=500&auto=format",
+            "banner_image_url": "",
+            "owner": "0x1998f1e989c89c08cedec6a2ef311bb7624ba4d8",
+            "safelist_status": "not_requested",
+            "category": "",
+            "is_disabled": false,
+            "is_nsfw": false,
+            "trait_offers_enabled": false,
+            "collection_offers_enabled": true,
+            "opensea_url": "https://opensea.io/collection/the-swirl-2",
+            "project_url": "",
+            "wiki_url": "",
+            "discord_url": "",
+            "telegram_url": "",
+            "twitter_username": "",
+            "instagram_username": "",
+            "contracts": [
+                {
+                    "address": "0x22531701e711994d9470bb9412f029a965e25db3",
+                    "chain": "ethereum"
+                }
+            ]
+        }
+    ],
+    "next": "LXBrPTM0Mjg2NDg0"
+}
